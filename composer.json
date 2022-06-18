@@ -1,0 +1,14 @@
+{
+    "name": "heliostat/router",
+    "autoload": {
+        "psr-4": {
+            "Heliostat\\Router\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "heliostat9"
+        }
+    ],
+    "require": {}
+}
