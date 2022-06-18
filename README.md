@@ -1,7 +1,7 @@
 # Simple router library
 
-#Example usage
-
+# Example usage
+```php
 <?php
 
 require "vendor/autoload.php";
@@ -17,3 +17,4 @@ $route = new \Heliostat\Router\Route("user/{id}/photo/{photo}", function($id, $p
 $router->get($route);
 
 echo (new \Heliostat\Router\URLMatchResolver($context, $router))->match();
+```
