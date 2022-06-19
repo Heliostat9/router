@@ -11,6 +11,11 @@ class Router
         $this->routes['GET'][] = $route;
     }
 
+    public function post(Route $route): void
+    {
+        $this->routes['POST'][] = $route;
+    }
+
     public function routes(): array
     {
         return $this->routes;

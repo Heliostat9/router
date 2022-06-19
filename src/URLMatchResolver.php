@@ -39,8 +39,10 @@ class URLMatchResolver
 
             foreach($uri_explode as $index => $uri_ex) {
                 if (preg_match('/{[a-zA-Z1-9]*}/i', $uri_ex)) {
-                    $parameters[trim($uri_ex, '{}')] = $url_explode[$index];
-                    $uri_explode[$index] = $url_explode[$index];
+                    if (isset($url_explode[$index])) {
+                        $parameters[trim($uri_ex, '{}')] = $url_explode[$index];
+                        $uri_explode[$index] = $url_explode[$index];
+                    }
                 }
             }
 
