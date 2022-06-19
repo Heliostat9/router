@@ -7,7 +7,11 @@ $context = new \Heliostat\Router\RequestContext();
 $router = new Heliostat\Router\Router();
 
 $router->get(new \Heliostat\Router\Route("/", function () {
-    return "INDEX";
+    return "
+    <form method='post' action='user'>
+        <input type='submit'>
+    </form>
+    ";
 }));
 
 $route = new \Heliostat\Router\Route("user/{id}/photo/{photo}", function($id, $photo) {

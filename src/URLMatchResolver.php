@@ -15,17 +15,12 @@ class URLMatchResolver
 
     public function match()
     {
-        //Get method and uri for current query
         $httpMethod = $this->context->method();
         $url = $this->context->uri();
 
-        //Get all register routes
         $routes = $this->router->routes();
 
-        //Get all routes for current http method
         $currentHttpRoutes = $routes[$httpMethod];
-
-        var_dump($currentHttpRoutes);
 
         foreach ($currentHttpRoutes as $currentRoute)
         {
@@ -48,7 +43,7 @@ class URLMatchResolver
 
             if ('/' . implode('/',$uri_explode) == $url) {
                 $action = $currentRoute->action;
-                var_dump($parameters);
+
                 return call_user_func($action, ...$parameters);
             }
         }
